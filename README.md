@@ -59,21 +59,43 @@ Now that you have successfully run the app, let's modify it.
 
 You've successfully run and modified your React Native App. :partying_face:
 
-### Now what?
+## Basic structure of app
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+MyApp/
+├── app/                     # Expo Router pages
+│   ├── (tabs)/              # Tab navigation group
+│   │   ├── _layout.tsx      # Tab layout
+│   │   ├── index.tsx        # Home tab
+│   │   └── profile.tsx      # Profile tab
+│   ├── _layout.tsx          # Root layout
+│   └── +not-found.tsx       # 404 page
+├── src/
+│   ├── components/          # Reusable UI components
+│   │   ├── ui/              # Basic UI elements
+│   │   └── features/        # Feature-specific components
+│   ├── services/            # API calls and external services
+│   ├── utils/               # Helper functions
+│   ├── hooks/               # Custom React hooks
+│   ├── context/             # React Context providers
+│   ├── types/               # TypeScript type definitions
+│   └── theme/               # Design system (colors, fonts)
+├── assets/                  # Images, fonts, sounds
+│   ├── images/
+│   ├── icons/
+│   └── fonts/
+├── constants/               # App-wide constants
+└── .env
 
-# Troubleshooting
+## Naming Conventions for files
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+Components → PascalCase → TaskCard.tsx
+Hooks → camelCase + use → useTasks.ts
+Utils → camelCase → formatDate.ts
+Services → camelCase + Service → taskService.ts
+Types → PascalCase → Task.ts
 
-# Learn More
+## Naming Conventions for directories
 
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Components → PascalCase → TaskCard
+Screens → PascalCase → HomeScreen
+Remaining → camelCase
