@@ -29,6 +29,10 @@ export default function HomeScreen() {
       );
 
       setNews(sorted);
+    }
+      catch (err){
+        console.error("Error in loading news");
+        console.error(err);
     } finally {
       setLoading(false);
     }

@@ -2,7 +2,8 @@
 import axios from 'axios';
 import { NewsItem } from '../types/News';
 
-const API_KEY = 'YOUR_API_KEY';
+const API_KEY = process.env.API_KEY;
+if (!API_KEY) throw new Error("API key is empty.")
 
 export const fetchNews = async (): Promise<NewsItem[]> => {
   const res = await axios.get(
