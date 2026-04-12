@@ -5,18 +5,17 @@ import { Provider as PaperProvider } from 'react-native-paper';
 import Navigator from './src/navigation';
 import { useBookmarks } from './src/store/useBookmarks';
 
-
 export default function App() {
   const loadBookmarks = useBookmarks(state => state.loadBookmarks);
   React.useEffect(() => {
     loadBookmarks();
-  }, [loadBookmarks]);
+  }, []);
 
   return (
-    <PaperProvider>
-      <NavigationContainer>
-        <Navigator />
-      </NavigationContainer>
-    </PaperProvider>
+      <PaperProvider>
+        <NavigationContainer>
+          <Navigator />
+        </NavigationContainer>
+      </PaperProvider>
   );
 }

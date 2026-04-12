@@ -4,9 +4,36 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
-## Step 1: Start the Metro Server
+## Step 1: Install the project dependencies
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+First of all, you will need to install package dependencies.
+
+Choose Node version>= 18.x.x
+
+```bash
+# using npm
+npm install
+
+# OR using Yarn
+yarn install
+
+# OR using Bun (Faster)
+bun install
+```
+
+## Step 2: Install pod inside ios (Configured this project for ios app)
+
+```bash
+cd ios
+
+pod install
+
+cd ..
+```
+
+## Step 3: Start the Metro Server
+
+Second, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
 To start Metro, run the following command from the _root_ of your React Native project:
 
@@ -16,9 +43,12 @@ npm start
 
 # OR using Yarn
 yarn start
+
+# OR using Bun (Faster)
+bun start
 ```
 
-## Step 2: Start your Application
+## Step 4: Start your Application
 
 Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
 
@@ -30,6 +60,9 @@ npm run android
 
 # OR using Yarn
 yarn android
+
+#OR using Bun
+bun android
 ```
 
 ### For iOS
@@ -40,6 +73,9 @@ npm run ios
 
 # OR using Yarn
 yarn ios
+
+#Or using Bun
+bun ios
 ```
 
 If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
