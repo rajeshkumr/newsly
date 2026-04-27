@@ -44,23 +44,28 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Swiper
-        ref={swiperRef}
-        cards={news}
-        renderCard={(card: NewsItem) =>
-          card ? <NewsCard item={card} /> : null
-        }
-        onTapCard={(index) => {
-            const item = news[index];
-          if (!item) {
-            return;  // 🛑 prevent crash
-          }
-          navigation.navigate('Detail', { item: news[index] });
-        }
-        }
-        stackSize={3}
-        verticalSwipe={false}
-      />
+    <Swiper
+  ref={swiperRef}
+  cards={news}
+  renderCard={(card: NewsItem) =>
+    card ? <NewsCard item={card} /> : null
+  }
+
+  verticalSwipe={true}
+  horizontalSwipe={false}
+
+  stackSize={3}
+  showSecondCard={true}
+  stackSeparation={15}
+  stackScale={10}
+  cardVerticalMargin={40}
+
+  onSwipedBottom={() => {
+    requestAnimationFrame(() => {
+      swiperRef.current?.swipeBack();
+    });
+  }}
+/>
     </View>
   );
 }
